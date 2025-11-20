@@ -3,191 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Juba Auto Town</title>
+    <title>Contact Us | Weltew Homes</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header>
+    <!-- Header & Navigation -->
+    <header id="header">
         <div class="container">
-            <a href="index.html" class="logo">JUBA <span>AUTO TOWN</span></a>
-            <button class="nav-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav>
-                <ul>
+            <nav class="navbar">
+                <a href="index.html" class="logo">Weltew<span>Homes</span></a>
+                <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
-                    <li><a href="services.html" class="cta-button">Start Your Ride</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
             </nav>
         </div>
     </header>
 
     <!-- Page Header -->
     <section class="page-header">
+        <div class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');"></div>
+        <div class="section-overlay"></div>
         <div class="container">
-            <h1>Contact Us</h1>
-            <p>Get in touch with our team of automotive experts</p>
+            <div class="page-header-content">
+                <h1 class="fade-in">Contact Us</h1>
+                <p class="fade-in">Get in touch with our team to discuss your luxury furniture needs</p>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <div class="contact-container">
-                <div class="contact-info fade-in">
-                    <h2>Get In Touch</h2>
-                    <p>Visit our showroom or contact us to schedule a test drive. Our team of automotive experts is ready to assist you in finding your perfect vehicle.</p>
-                    
-                    <div class="contact-details">
+            <div class="section-content">
+                <h2 class="fade-in">Get In Touch</h2>
+                <div class="gold-divider fade-in"></div>
+                <div class="contact-content">
+                    <div class="contact-form fade-in">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <select id="subject" class="form-control" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="product">Product Information</option>
+                                    <option value="custom">Custom Furniture</option>
+                                    <option value="design">Interior Design Consultation</option>
+                                    <option value="delivery">Delivery & Installation</option>
+                                    <option value="maintenance">Maintenance & Repair</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" class="form-control" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-gold">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="contact-info fade-in">
                         <div class="contact-item">
                             <div class="contact-icon">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
-                            <div class="contact-text">
-                                <h3>Our Location</h3>
-                                <p>Juba Town Center, Juba, South Sudan</p>
+                            <div class="contact-details">
+                                <h4>Our Location</h4>
+                                <p>Gudele 1 Boba Junction, Juba, South Sudan</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon">
                                 <i class="fas fa-phone"></i>
                             </div>
-                            <div class="contact-text">
-                                <h3>Phone Number</h3>
-                                <p>+211 123 456 789</p>
+                            <div class="contact-details">
+                                <h4>Phone Number</h4>
+                                <p>+211 928 290 011</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon">
                                 <i class="fas fa-envelope"></i>
                             </div>
-                            <div class="contact-text">
-                                <h3>Email Address</h3>
-                                <p>info@jubaautotown.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h3>WhatsApp</h3>
-                                <p>+211 987 654 321</p>
+                            <div class="contact-details">
+                                <h4>Email Address</h4>
+                                <p>info@weltewhomes.com</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon">
                                 <i class="fas fa-clock"></i>
                             </div>
-                            <div class="contact-text">
-                                <h3>Business Hours</h3>
-                                <p>Monday - Saturday: 9:00 AM - 7:00 PM<br>Sunday: 10:00 AM - 5:00 PM</p>
+                            <div class="contact-details">
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                                <p>Saturday: 10:00 AM - 4:00 PM</p>
+                                <p>Sunday: Closed</p>
                             </div>
+                        </div>
+                        <div class="map-placeholder">
+                            <p>Map of Our Location</p>
                         </div>
                     </div>
-                </div>
-                
-                <div class="contact-form fade-in">
-                    <h2>Send Us a Message</h2>
-                    <form id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <select id="subject" name="subject" required>
-                                    <option value="">Select a subject</option>
-                                    <option value="sales">Vehicle Inquiry</option>
-                                    <option value="test-drive">Test Drive</option>
-                                    <option value="service">Service & Maintenance</option>
-                                    <option value="financing">Financing</option>
-                                    <option value="general">General Inquiry</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="cta-button full-width">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Map Section -->
-    <section id="map">
-        <div class="container">
-            <h2 class="section-title">Visit Our Showroom</h2>
-            <div class="map-container fade-in">
-                <div class="map-placeholder">
-                    <i class="fas fa-map-marked-alt"></i>
-                    <h3>Juba Auto Town Showroom</h3>
-                    <p>Juba Town Center, Juba, South Sudan</p>
-                    <a href="https://maps.google.com" target="_blank" class="cta-button">Open in Google Maps</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq">
+    <section style="min-height: 80vh;">
+        <div class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');"></div>
+        <div class="section-overlay"></div>
         <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <div class="faq-container">
-                <div class="faq-item fade-in">
-                    <div class="faq-question">
-                        <h3>What financing options do you offer?</h3>
-                        <i class="fas fa-chevron-down"></i>
+            <div class="section-content">
+                <h2 class="fade-in">Frequently Asked Questions</h2>
+                <div class="gold-divider fade-in"></div>
+                <div class="blog-posts">
+                    <div class="blog-post fade-in">
+                        <div class="blog-content">
+                            <h3>How long does delivery take?</h3>
+                            <p class="post-excerpt">Standard delivery within Juba takes 3-5 business days. For custom orders, delivery time varies based on the complexity of the piece.</p>
+                            <div class="post-full">
+                                <p>For standard items in stock, we aim to deliver within 3-5 business days in Juba. For areas outside Juba, delivery may take 7-10 business days depending on location.</p>
+                                <p>Custom furniture orders require additional time for crafting. Typically, these take 4-8 weeks from order confirmation to delivery. We'll provide a specific timeline when you place your custom order.</p>
+                                <p>All deliveries include professional installation and setup at no additional cost. We'll coordinate with you to schedule a convenient delivery time.</p>
+                            </div>
+                            <button class="read-more">Read More</button>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        <p>We offer a range of financing options including bank financing, in-house financing, and lease options. Our financial experts will work with you to find the best solution based on your needs and credit profile.</p>
+                    <div class="blog-post fade-in">
+                        <div class="blog-content">
+                            <h3>Do you offer custom furniture design?</h3>
+                            <p class="post-excerpt">Yes, we specialize in creating bespoke furniture pieces tailored to your specific requirements and space.</p>
+                            <div class="post-full">
+                                <p>Absolutely! Custom furniture design is one of our specialties. We work closely with you to create pieces that perfectly fit your space, style, and functional needs.</p>
+                                <p>Our design process begins with a consultation to understand your vision, requirements, and budget. We then create detailed designs and provide material samples for your approval.</p>
+                                <p>Once the design is finalized, our master craftsmen bring your vision to life using traditional techniques and premium materials. We maintain communication throughout the process to ensure the final product exceeds your expectations.</p>
+                                <p>Custom projects typically take 4-8 weeks from design approval to completion, depending on complexity. We provide regular updates on progress throughout the crafting process.</p>
+                            </div>
+                            <button class="read-more">Read More</button>
+                        </div>
                     </div>
-                </div>
-                <div class="faq-item fade-in">
-                    <div class="faq-question">
-                        <h3>Do you provide vehicle maintenance services?</h3>
-                        <i class="fas fa-chevron-down"></i>
+                    <div class="blog-post fade-in">
+                        <div class="blog-content">
+                            <h3>What is your warranty policy?</h3>
+                            <p class="post-excerpt">We offer comprehensive warranties on all our furniture, with coverage varying by product type and materials.</p>
+                            <div class="post-full">
+                                <p>We stand behind the quality of our craftsmanship and materials. All Weltew Homes furniture comes with a warranty against manufacturing defects.</p>
+                                <p>Wood furniture: 10-year warranty on frames and 5-year warranty on finishes</p>
+                                <p>Upholstered furniture: 7-year warranty on frames and 2-year warranty on cushions and fabrics</p>
+                                <p>Our warranty covers repairs or replacement of defective parts. It does not cover damage from misuse, accidents, or normal wear and tear.</p>
+                                <p>For warranty claims, please contact our customer service team with photos of the issue and your original purchase information. We'll guide you through the process and arrange for inspection and repair if needed.</p>
+                            </div>
+                            <button class="read-more">Read More</button>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        <p>Yes, we have a state-of-the-art service center with certified technicians who specialize in luxury vehicle maintenance. We offer routine services, repairs, and comprehensive vehicle inspections.</p>
-                    </div>
-                </div>
-                <div class="faq-item fade-in">
-                    <div class="faq-question">
-                        <h3>Can I schedule a test drive?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Absolutely! We encourage test drives to help you find the perfect vehicle. You can schedule a test drive by calling us, using our contact form, or visiting our showroom.</p>
-                    </div>
-                </div>
-                <div class="faq-item fade-in">
-                    <div class="faq-question">
-                        <h3>Do you accept trade-ins?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, we accept trade-ins and offer competitive valuations. Our team will assess your current vehicle and provide a fair market value that can be applied toward your new purchase.</p>
+                    <div class="blog-post fade-in">
+                        <div class="blog-content">
+                            <h3>Do you provide interior design services?</h3>
+                            <p class="post-excerpt">Yes, we offer professional interior design consultation to help you create cohesive and beautiful living spaces.</p>
+                            <div class="post-full">
+                                <p>Our interior design services help you create spaces that reflect your personality while maximizing functionality and aesthetic appeal.</p>
+                                <p>We offer different levels of service:</p>
+                                <p>• Consultation: One-time advice on furniture selection, layout, and styling</p>
+                                <p>• Room Design: Complete design方案 for a specific room including furniture, color scheme, and accessories</p>
+                                <p>• Full Home Design: Comprehensive design service for your entire home</p>
+                                <p>Our design process includes space planning, furniture selection, color consultation, and accessory recommendations. We work within your budget to create a space you'll love.</p>
+                                <p>Design fees vary based on the scope of the project. The fee is often credited toward furniture purchases from our collection.</p>
+                            </div>
+                            <button class="read-more">Read More</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -198,48 +202,75 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">JUBA <span>AUTO TOWN</span></div>
-                    <p>Your premier destination for luxury and performance vehicles in South Sudan.</p>
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">Weltew<span>Homes</span></a>
+                    <p>Bringing the finest Turkish furniture craftsmanship to South Sudan. Transform your living spaces with our exclusive collections of luxury furniture.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
                     </div>
                 </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
+                <div class="footer-links-container">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Our Vehicles</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blog.html">Blog</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="services.html">Vehicle Sales</a></li>
-                        <li><a href="services.html">Financing</a></li>
-                        <li><a href="services.html">Maintenance</a></li>
-                        <li><a href="services.html">Customization</a></li>
+                <div class="footer-links-container">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Custom Furniture</a></li>
+                        <li><a href="#">Interior Design</a></li>
+                        <li><a href="#">Delivery & Installation</a></li>
+                        <li><a href="#">Consultation</a></li>
+                        <li><a href="#">Maintenance</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> Juba Town Center, Juba, South Sudan</p>
-                        <p><i class="fas fa-phone"></i> +211 123 456 789</p>
-                        <p><i class="fas fa-envelope"></i> info@jubaautotown.com</p>
-                    </div>
+                <div class="footer-links-container">
+                    <h4 class="footer-heading">Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Gudele 1 Boba Junction</a></li>
+                        <li><a href="#">Juba, South Sudan</a></li>
+                        <li><a href="#">+211 928 290 011</a></li>
+                        <li><a href="#">info@weltewhomes.com</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Juba Auto Town. All Rights Reserved.</p>
+            <div class="copyright">
+                <p>&copy; 2025 Weltew Homes. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Font Awesome Icons (as SVG) -->
+    <script>
+        const style = document.createElement('style');
+        style.textContent = `
+            .fas, .fab {
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
+            }
+            .fab {
+                font-family: 'Font Awesome 5 Brands';
+            }
+            .fa-search-plus:before { content: "\\f00e"; }
+            .fa-map-marker-alt:before { content: "\\f3c5"; }
+            .fa-phone:before { content: "\\f095"; }
+            .fa-envelope:before { content: "\\f0e0"; }
+            .fa-facebook-f:before { content: "\\f39e"; }
+            .fa-instagram:before { content: "\\f16d"; }
+            .fa-twitter:before { content: "\\f099"; }
+            .fa-pinterest:before { content: "\\f0d2"; }
+            .fa-clock:before { content: "\\f017"; }
+        `;
+        document.head.appendChild(style);
+    </script>
 
     <script src="script.js"></script>
 </body>
