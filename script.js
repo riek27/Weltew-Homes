@@ -1,345 +1,493 @@
-// Product Data
-const products = {
-    1: {
-        title: "Luxury Sofas",
-        description: "Our luxury sofas are handcrafted by skilled artisans using traditional Turkish techniques. Each piece features premium materials, including solid wood frames, high-density foam, and the finest upholstery fabrics.",
-        features: [
-            "Hand-carved wooden frames",
-            "Premium fabric or leather upholstery",
-            "High-density foam for optimal comfort",
-            "Reinforced joints for durability",
-            "Custom sizing available"
-        ]
-    },
-    2: {
-        title: "Dining Tables",
-        description: "Make every meal an occasion with our exquisite dining tables. Crafted from premium woods with intricate detailing, these tables become the centerpiece of your dining experience.",
-        features: [
-            "Solid wood construction",
-            "Hand-finished surfaces",
-            "Intricate carved details",
-            "Sturdy and stable design",
-            "Various sizes and shapes available"
-        ]
-    },
-    3: {
-        title: "Bedroom Sets",
-        description: "Transform your bedroom into a personal sanctuary with our luxurious bedroom collections. From elegant beds to functional storage solutions, create the bedroom of your dreams.",
-        features: [
-            "Solid wood bed frames",
-            "Spacious wardrobes and dressers",
-            "Soft-close drawer mechanisms",
-            "Elegant hardware finishes",
-            "Custom configurations available"
-        ]
-    },
-    4: {
-        title: "Office Desks",
-        description: "Enhance your workspace with our executive office desks that combine functionality with sophisticated design. Perfect for home offices or corporate environments.",
-        features: [
-            "Spacious work surface",
-            "Integrated cable management",
-            "Sturdy construction",
-            "Elegant finish options",
-            "Optional storage additions"
-        ]
-    },
-    5: {
-        title: "Wardrobes",
-        description: "Our custom-designed wardrobes optimize space while adding an element of luxury to your bedroom. Tailored to your specific storage needs and aesthetic preferences.",
-        features: [
-            "Custom sizing and configuration",
-            "Premium wood construction",
-            "Soft-close doors and drawers",
-            "Interior lighting options",
-            "Various finish and hardware options"
-        ]
-    },
-    6: {
-        title: "Interior Decor",
-        description: "Complete your interior design with our selection of complementary decor pieces. From accent tables to decorative items, add the perfect finishing touches to your space.",
-        features: [
-            "Handcrafted decorative items",
-            "Premium materials and finishes",
-            "Various style options",
-            "Complements main furniture pieces",
-            "Unique statement pieces"
-        ]
-    }
-};
+// ===== GLOBAL VARIABLES =====
+let currentImageIndex = 0;
 
-// Initialize when DOM is loaded
+// Gallery images for gallery page
+const galleryImages = [
+    {
+        url: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        title: 'Modern Construction',
+        category: 'construction'
+    },
+    {
+        url: 'https://images.unsplash.com/photo-1503387769-00a112127ca0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        title: 'Architectural Design',
+        category: 'design'
+    },
+    {
+        url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        title: 'Construction Team',
+        category: 'team'
+    },
+    {
+        url: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        title: 'Building Materials',
+        category: 'materials'
+    },
+    {
+        url: 'https://images.unsplash.com/photo-1487956382158-bb926046304a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        title: 'Construction Site',
+        category: 'construction'
+    },
+    {
+        url: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        title: 'Completed Project',
+        category: 'completed'
+    },
+    {
+        url: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        title: 'ISSB Blocks',
+        category: 'materials'
+    },
+    {
+        url: 'https://images.unsplash.com/photo-1503387769-00a112127ca0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        title: 'House Design',
+        category: 'design'
+    },
+    {
+        url: 'https://images.unsplash.com/photo-1600585154340-043788447ebf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        title: 'Modern Architecture',
+        category: 'design'
+    },
+    {
+        url: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        title: 'Interior Design',
+        category: 'design'
+    },
+    {
+        url: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        title: 'Luxury Home',
+        category: 'completed'
+    },
+    {
+        url: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        title: 'Construction Workers',
+        category: 'team'
+    }
+];
+
+// Home page gallery images (only 3)
+const homeGalleryImages = [
+    {
+        url: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        title: 'Modern Construction Project'
+    },
+    {
+        url: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        title: 'Completed Luxury Home'
+    },
+    {
+        url: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        title: 'ISSB Block Production'
+    }
+];
+
+// ===== DOM ELEMENTS =====
+const mobileNavToggle = document.getElementById('mobileNavToggle');
+const mobileNav = document.getElementById('mobileNav');
+const mobileNavClose = document.getElementById('mobileNavClose');
+const mobileServicesToggle = document.getElementById('mobileServicesToggle');
+const mobileServicesContent = document.getElementById('mobileServicesContent');
+const whatsappButton = document.getElementById('whatsappButton');
+const whatsappPopup = document.getElementById('whatsappPopup');
+const popupClose = document.getElementById('popupClose');
+const whatsappCancel = document.getElementById('whatsappCancel');
+const accordionToggles = document.querySelectorAll('.accordion-toggle');
+const lightboxModal = document.getElementById('lightboxModal');
+const lightboxClose = document.getElementById('lightboxClose');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
+const lightboxImage = document.getElementById('lightboxImage');
+const galleryGrid = document.getElementById('galleryGrid');
+const contactForm = document.getElementById('contactForm');
+const categoryButtons = document.querySelectorAll('.category-btn');
+
+// ===== INITIALIZATION =====
 document.addEventListener('DOMContentLoaded', function() {
-    // Common functionality for all pages
+    // Initialize based on current page
+    const currentPage = getCurrentPage();
     
-    // Sticky Header
-    const header = document.getElementById('header');
-    if (header) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+    if (currentPage === 'gallery') {
+        initializeGallery();
+        setupGalleryFilter();
+    } else if (currentPage === 'home') {
+        initializeHomeGallery();
     }
-
-    // Mobile Navigation
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
     
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-    }
-
-    // Fade-in on Scroll
-    const fadeElements = document.querySelectorAll('.fade-in');
-    const fadeInOnScroll = () => {
-        fadeElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementVisible = 150;
-            
-            if (elementTop < window.innerHeight - elementVisible) {
-                element.classList.add('visible');
-            }
-        });
-    };
-
-    window.addEventListener('scroll', fadeInOnScroll);
-    // Initial check
-    fadeInOnScroll();
-
-    // Parallax Effect for Section Backgrounds
-    const sectionBgs = document.querySelectorAll('.section-bg');
-    if (sectionBgs.length > 0) {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            
-            sectionBgs.forEach(bg => {
-                const rate = scrolled * -0.5;
-                bg.style.transform = `translate3d(0px, ${rate}px, 0px)`;
-            });
-        });
-    }
-
-    // Page-specific functionality
+    setupEventListeners();
     
-    // Homepage Slideshow
-    if (document.querySelector('.slideshow')) {
-        const slides = document.querySelectorAll('.slide');
-        let currentSlide = 0;
-        const slideInterval = 5000; // 5 seconds
+    // Set active navigation link
+    setActiveNavLink();
+    
+    // Initialize stats animation on home page
+    if (currentPage === 'home') {
+        initStatsAnimation();
+    }
+});
 
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
+// ===== FUNCTIONS =====
+function getCurrentPage() {
+    const path = window.location.pathname;
+    if (path.includes('about.html')) return 'about';
+    if (path.includes('services.html')) return 'services';
+    if (path.includes('gallery.html')) return 'gallery';
+    if (path.includes('contact.html')) return 'contact';
+    return 'home'; // Default to home
+}
+
+function setActiveNavLink() {
+    const currentPage = getCurrentPage();
+    const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-links a');
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        const linkPage = link.getAttribute('href');
+        
+        if ((currentPage === 'home' && (linkPage === 'index.html' || linkPage === './')) ||
+            (currentPage !== 'home' && linkPage.includes(currentPage + '.html'))) {
+            link.classList.add('active');
         }
+    });
+}
 
-        // Start slideshow
-        let slideTimer = setInterval(nextSlide, slideInterval);
-
-        // Pause slideshow on hover
-        const slideshow = document.querySelector('.slideshow');
-        slideshow.addEventListener('mouseenter', () => {
-            clearInterval(slideTimer);
-        });
-
-        slideshow.addEventListener('mouseleave', () => {
-            slideTimer = setInterval(nextSlide, slideInterval);
-        });
-    }
-
-    // Product Modal
-    const viewProductButtons = document.querySelectorAll('.view-product');
-    const productModal = document.getElementById('productModal');
-    const modalClose = document.querySelector('.modal-close');
+function initializeGallery() {
+    if (!galleryGrid) return;
     
-    if (viewProductButtons.length > 0 && productModal) {
-        viewProductButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const productId = button.closest('.product-card').getAttribute('data-product');
-                const product = products[productId];
-                
-                if (product) {
-                    // Set modal content
-                    document.getElementById('modalTitle').textContent = product.title;
-                    document.getElementById('modalDescription').textContent = product.description;
-                    
-                    const featuresList = document.getElementById('modalFeatures');
-                    featuresList.innerHTML = '';
-                    
-                    product.features.forEach(feature => {
-                        const li = document.createElement('li');
-                        li.textContent = feature;
-                        featuresList.appendChild(li);
-                    });
-                    
-                    productModal.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                }
-            });
-        });
+    galleryGrid.innerHTML = '';
+    
+    galleryImages.forEach((image, index) => {
+        const galleryItem = document.createElement('div');
+        galleryItem.className = `gallery-item ${image.category}`;
+        galleryItem.innerHTML = `
+            <img src="${image.url}" alt="${image.title}" data-index="${index}">
+            <div class="gallery-overlay">
+                <h4>${image.title}</h4>
+            </div>
+        `;
+        galleryGrid.appendChild(galleryItem);
+        
+        // Add click event to each gallery item
+        galleryItem.addEventListener('click', () => openLightbox(index));
+    });
+}
 
-        // Close Modal
-        modalClose.addEventListener('click', () => {
-            productModal.classList.remove('active');
-            document.body.style.overflow = 'auto';
+function initializeHomeGallery() {
+    const homeGallery = document.getElementById('homeGallery');
+    if (!homeGallery) return;
+    
+    homeGallery.innerHTML = '';
+    
+    homeGalleryImages.forEach((image, index) => {
+        const galleryItem = document.createElement('div');
+        galleryItem.className = 'gallery-preview-item';
+        galleryItem.innerHTML = `
+            <img src="${image.url}" alt="${image.title}">
+            <div class="gallery-overlay">
+                <h4>${image.title}</h4>
+            </div>
+        `;
+        homeGallery.appendChild(galleryItem);
+        
+        // Add click event to redirect to gallery page
+        galleryItem.addEventListener('click', () => {
+            window.location.href = 'gallery.html';
         });
+    });
+}
 
-        // Close modal when clicking outside
-        productModal.addEventListener('click', (e) => {
-            if (e.target === productModal) {
-                productModal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
+function setupGalleryFilter() {
+    if (!categoryButtons.length) return;
+    
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const category = this.getAttribute('data-category');
+            filterGallery(category);
         });
-    }
+    });
+}
 
-    // Gallery Lightbox
+function filterGallery(category) {
     const galleryItems = document.querySelectorAll('.gallery-item');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxClose = document.querySelector('.lightbox-close');
-    const lightboxImage = document.getElementById('lightboxImage');
-    const lightboxPrev = document.querySelector('.lightbox-prev');
-    const lightboxNext = document.querySelector('.lightbox-next');
     
-    if (galleryItems.length > 0 && lightbox) {
-        const galleryImages = [];
-        galleryItems.forEach(item => {
-            const img = item.querySelector('img');
-            if (img) {
-                galleryImages.push(img.src);
-            }
-        });
-
-        let currentImageIndex = 0;
-
-        galleryItems.forEach((item, index) => {
-            item.addEventListener('click', () => {
-                currentImageIndex = index;
-                lightboxImage.src = galleryImages[currentImageIndex];
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        // Lightbox Navigation
-        if (lightboxPrev && lightboxNext) {
-            lightboxPrev.addEventListener('click', () => {
-                currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-                lightboxImage.src = galleryImages[currentImageIndex];
-            });
-
-            lightboxNext.addEventListener('click', () => {
-                currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-                lightboxImage.src = galleryImages[currentImageIndex];
-            });
+    galleryItems.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+            item.style.display = 'block';
+            // Add fade in animation
+            setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'scale(1)';
+            }, 10);
+        } else {
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.8)';
+            setTimeout(() => {
+                item.style.display = 'none';
+            }, 300);
         }
+    });
+}
 
-        // Close Lightbox
-        lightboxClose.addEventListener('click', () => {
-            lightbox.classList.remove('active');
+function setupEventListeners() {
+    // Mobile navigation toggle
+    if (mobileNavToggle) {
+        mobileNavToggle.addEventListener('click', () => {
+            mobileNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    
+    if (mobileNavClose) {
+        mobileNavClose.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
             document.body.style.overflow = 'auto';
         });
-
-        // Close lightbox when clicking outside
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                lightbox.classList.remove('active');
-                document.body.style.overflow = 'auto';
+    }
+    
+    // Mobile services dropdown toggle
+    if (mobileServicesToggle) {
+        mobileServicesToggle.addEventListener('click', () => {
+            mobileServicesContent.classList.toggle('active');
+            const icon = mobileServicesToggle.querySelector('i');
+            if (mobileServicesContent.classList.contains('active')) {
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+            } else {
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
             }
         });
     }
-
-    // Read More/Less Toggle
-    const readMoreButtons = document.querySelectorAll('.read-more');
-    if (readMoreButtons.length > 0) {
-        readMoreButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const postFull = button.previousElementSibling;
-                const isExpanded = postFull.classList.contains('expanded');
+    
+    // WhatsApp widget
+    if (whatsappButton) {
+        whatsappButton.addEventListener('click', () => {
+            whatsappPopup.classList.toggle('active');
+        });
+    }
+    
+    if (popupClose) {
+        popupClose.addEventListener('click', () => {
+            whatsappPopup.classList.remove('active');
+        });
+    }
+    
+    if (whatsappCancel) {
+        whatsappCancel.addEventListener('click', () => {
+            whatsappPopup.classList.remove('active');
+        });
+    }
+    
+    // Close WhatsApp popup when clicking outside
+    document.addEventListener('click', (e) => {
+        if (whatsappPopup && whatsappButton && !whatsappPopup.contains(e.target) && !whatsappButton.contains(e.target)) {
+            whatsappPopup.classList.remove('active');
+        }
+    });
+    
+    // Services accordion
+    if (accordionToggles.length > 0) {
+        accordionToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const accordionItem = toggle.closest('.accordion-item');
+                const accordionContent = accordionItem.querySelector('.accordion-content');
+                const icon = toggle.querySelector('i');
                 
-                if (isExpanded) {
-                    postFull.classList.remove('expanded');
-                    button.textContent = 'Read More';
+                // Toggle active class
+                accordionContent.classList.toggle('active');
+                
+                // Change icon
+                if (accordionContent.classList.contains('active')) {
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
                 } else {
-                    postFull.classList.add('expanded');
-                    button.textContent = 'Read Less';
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
                 }
             });
         });
     }
-
-    // Animated Counters
-    const counters = document.querySelectorAll('.counter-number');
-    if (counters.length > 0) {
-        const animateCounters = () => {
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const duration = 2000; // 2 seconds
-                const step = target / (duration / 16); // 60fps
-                let current = 0;
-                
-                const updateCounter = () => {
-                    current += step;
-                    if (current < target) {
-                        counter.textContent = Math.floor(current);
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        counter.textContent = target;
-                    }
-                };
-                
-                updateCounter();
-            });
-        };
-
-        // Start counters when section is in view
-        const aboutSection = document.getElementById('about');
-        if (aboutSection) {
-            const aboutObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateCounters();
-                        aboutObserver.unobserve(aboutSection);
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            aboutObserver.observe(aboutSection);
-        }
+    
+    // Lightbox functionality
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', () => {
+            lightboxModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
     }
-
-    // Form Validation
-    const contactForm = document.getElementById('contactForm');
+    
+    if (lightboxPrev) {
+        lightboxPrev.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        });
+    }
+    
+    if (lightboxNext) {
+        lightboxNext.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        });
+    }
+    
+    // Close lightbox when clicking outside the image
+    if (lightboxModal) {
+        lightboxModal.addEventListener('click', (e) => {
+            if (e.target === lightboxModal) {
+                lightboxModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Close lightbox with ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
+                lightboxModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+    
+    // Contact form submission
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
+            // Get form values
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
             const message = document.getElementById('message').value;
             
-            // Simple validation
-            if (name && email && phone && message) {
-                alert('Thank you for your message! We will get back to you soon.');
-                contactForm.reset();
-            } else {
-                alert('Please fill in all fields.');
+            // Form validation
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields.');
+                return;
             }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // In a real application, you would send this data to a server
+            // For now, we'll show a success message
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                alert(`Thank you, ${name}! Your message has been sent. We will contact you at ${email} or ${phone} shortly.`);
+                
+                // Reset the form
+                contactForm.reset();
+                
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
         });
     }
+    
+    // Sticky header scroll effect
+    const header = document.querySelector('header');
+    let lastScrollTop = 0;
+    
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > 100) {
+            header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+        } else {
+            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+            header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+        }
+        
+        // Hide/show header on scroll
+        if (scrollTop > lastScrollTop && scrollTop > 200) {
+            // Scrolling down
+            header.style.transform = 'translateY(-100%)';
+        } else {
+            // Scrolling up
+            header.style.transform = 'translateY(0)';
+        }
+        
+        lastScrollTop = scrollTop;
+    });
+}
+
+function openLightbox(index) {
+    currentImageIndex = index;
+    updateLightboxImage();
+    lightboxModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function updateLightboxImage() {
+    const image = galleryImages[currentImageIndex];
+    lightboxImage.src = image.url;
+    lightboxImage.alt = image.title;
+}
+
+function initStatsAnimation() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    if (!statNumbers.length) return;
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumber = entry.target;
+                const targetValue = parseInt(statNumber.textContent);
+                let currentValue = 0;
+                const increment = targetValue / 50;
+                const timer = setInterval(() => {
+                    currentValue += increment;
+                    if (currentValue >= targetValue) {
+                        statNumber.textContent = targetValue + '+';
+                        clearInterval(timer);
+                    } else {
+                        statNumber.textContent = Math.floor(currentValue);
+                    }
+                }, 30);
+                
+                // Stop observing after animation
+                observer.unobserve(statNumber);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    statNumbers.forEach(stat => {
+        observer.observe(stat);
+    });
+}
+
+// ===== SCROLL ANIMATIONS =====
+// Animate elements on scroll
+const animateOnScroll = () => {
+    const elements = document.querySelectorAll('.service-card, .value-item, .benefit-item, .process-step, .team-member');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    elements.forEach(element => {
+        observer.observe(element);
+    });
+};
+
+// Initialize scroll animations when page loads
+window.addEventListener('load', () => {
+    animateOnScroll();
 });
