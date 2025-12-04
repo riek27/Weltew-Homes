@@ -1997,3 +1997,35 @@ footer:before {
         right: -20px;
     }
 }
+
+
+/* Add this to the existing style.css file */
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.lightbox-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem;
+    border-radius: 0 0 4px 4px;
+}
+
+.lightbox-caption h4 {
+    margin: 0 0 0.5rem 0;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.lightbox-caption p {
+    margin: 0;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
