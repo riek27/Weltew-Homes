@@ -3,93 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Weltew Homes</title>
+    <title>About Us | AD&B Construction Co. Ltd</title>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="#">
 </head>
 <body>
     <!-- Header & Navigation -->
-    <header id="header">
-        <div class="container">
-            <nav class="navbar">
-                <a href="index.html" class="logo">Weltew<span>Homes</span></a>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">AD&B <span>Construction</span></a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li class="dropdown">
+                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="services.html#issb">Interlocking Stabilized Soil Blocks</a>
+                            <a href="services.html#design">Architectural Design</a>
+                            <a href="services.html#construction">General Construction</a>
+                            <a href="services.html#materials">Supply of Materials</a>
+                        </div>
+                    </li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-                <div class="hamburger">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
             </nav>
+            
+            <!-- Mobile Navigation Toggle -->
+            <button class="mobile-nav-toggle" id="mobileNavToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-nav" id="mobileNav">
+            <div class="mobile-nav-header">
+                <a href="index.html" class="logo">AD&B <span>Construction</span></a>
+                <button class="mobile-nav-close" id="mobileNavClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li>
+                    <button class="mobile-dropdown-toggle" id="mobileServicesToggle">
+                        Services <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="mobile-dropdown-content" id="mobileServicesContent">
+                        <a href="services.html#issb">Interlocking Stabilized Soil Blocks</a>
+                        <a href="services.html#design">Architectural Design</a>
+                        <a href="services.html#construction">General Construction</a>
+                        <a href="services.html#materials">Supply of Materials</a>
+                    </div>
+                </li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');"></div>
-        <div class="section-overlay"></div>
-        <div class="container">
-            <div class="page-header-content">
-                <h1 class="fade-in">About Us</h1>
-                <p class="fade-in">Discover the story behind our commitment to excellence in Turkish furniture craftsmanship</p>
+    <!-- WhatsApp Widget -->
+    <div class="whatsapp-widget">
+        <div class="whatsapp-button" id="whatsappButton">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+        <div class="whatsapp-tooltip">
+            Chat with us on WhatsApp
+        </div>
+        <div class="whatsapp-popup" id="whatsappPopup">
+            <div class="popup-header">
+                <div class="popup-avatar">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="popup-info">
+                    <h4>AD&B Construction Co. Ltd</h4>
+                    <p>Typically replies within 1 hour</p>
+                </div>
+                <button class="popup-close" id="popupClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="popup-content">
+                <p>Hello! 👋</p>
+                <p>How can we help you today?</p>
+            </div>
+            <div class="popup-actions">
+                <a href="https://wa.me/211922234996?text=Hello%20ADB%20Construction,%20I%20would%20like%20more%20information." 
+                   class="whatsapp-action-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    Start Chat
+                </a>
+                <button class="whatsapp-cancel" id="whatsappCancel">
+                    Maybe Later
+                </button>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- About Section -->
-    <section id="about">
+    <!-- About Hero -->
+    <section class="about-hero">
         <div class="container">
-            <div class="section-content">
-                <div class="about-content">
-                    <div class="about-image fade-in">
-                        <img src="assets/turkish.jpg" alt="Turkish Craftsmanship">
-                    </div>
-                    <div class="about-text fade-in">
-                        <h2>Crafting Excellence</h2>
-                        <div class="gold-divider"></div>
-                        <p>Weltew Homes embodies the rich heritage of Turkish furniture craftsmanship, blending centuries-old techniques with contemporary design. Each piece tells a story of meticulous attention to detail, premium materials, and artistic expression.</p>
-                        <p>Based in Juba, South Sudan, we bring world-class luxury furniture to discerning clients who appreciate the fusion of traditional artistry and modern elegance. Our collections transform living spaces into sanctuaries of comfort and style.</p>
-                        <div class="counters">
-                            <div class="counter">
-                                <span class="counter-number" data-target="25">0</span>
-                                <span class="counter-text">Years of Excellence</span>
-                            </div>
-                            <div class="counter">
-                                <span class="counter-number" data-target="1500">0</span>
-                                <span class="counter-text">Happy Clients</span>
-                            </div>
-                            <div class="counter">
-                                <span class="counter-number" data-target="500">0</span>
-                                <span class="counter-text">Projects</span>
-                            </div>
-                        </div>
-                    </div>
+            <h1>About AD&B Construction Co. Ltd</h1>
+            <p>Building strong foundations with innovation — from ISSBs to world-class construction, design, and consultancy.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>📍 Pope Road, Thong Piny, Juba, South Sudan</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>📞 0922 234 996</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>📧 info.adbtechnologiesltd@gmail.com</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mission Section -->
-    <section style="min-height: 70vh;">
-        <div class="section-bg" style="background-image: url('httd=M3wufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');"></div>
-        <div class="section-overlay"></div>
+    <!-- About Content -->
+    <section>
         <div class="container">
-            <div class="section-content">
-                <div class="about-content">
-                    <div class="about-text fade-in">
-                        <h2>Our Mission</h2>
-                        <div class="gold-divider"></div>
-                        <p>At Weltew Homes, our mission is to enrich living spaces with furniture that combines aesthetic beauty with functional excellence. We believe that your home should be a reflection of your personality and a sanctuary for your soul.</p>
-                        <p>We source only the finest materials and work with master craftsmen who share our passion for perfection. Every piece in our collection is designed to stand the test of time, both in durability and style.</p>
-                        <a href="contact.html" class="btn btn-gold">Get In Touch</a>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Story</h3>
+                    <p>Founded with a vision to transform the construction landscape in South Sudan, AD&B Construction Co. Ltd has been at the forefront of innovative building technologies and sustainable construction practices since our inception.</p>
+                    <p>Specializing in Interlocking Stabilized Soil Blocks (ISSB), we've pioneered cost-effective and eco-friendly construction methods that have revolutionized the building industry. Our technology makes quality housing more accessible while significantly reducing environmental impact.</p>
+                    <p>With a dedicated team of experienced architects, engineers, and construction professionals, we deliver comprehensive end-to-end solutions from initial design concepts to project completion. We are committed to quality, durability, and creating lasting value for our clients and communities.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="AD&B Construction Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mission-vision-container">
+                <div class="mission-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Our Mission</h3>
+                    <p>To provide innovative, sustainable, and cost-effective construction solutions that transform communities and improve living standards through advanced building technologies and exceptional service.</p>
+                </div>
+                <div class="vision-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Our Vision</h3>
+                    <p>To be the leading construction company in East Africa, recognized for excellence in sustainable building practices, innovative construction technologies, and community development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="values">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Core Values</h2>
+                <p class="section-subtitle">The principles that guide our work and relationships</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-item">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Sustainability</h3>
+                    <p>We prioritize eco-friendly materials and methods that minimize environmental impact and promote green building practices.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-gem"></i>
+                    <h3>Quality</h3>
+                    <p>We never compromise on materials or workmanship, ensuring durable, safe, and superior-quality structures.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovation</h3>
+                    <p>We continuously adopt and develop new technologies to improve construction efficiency, affordability, and sustainability.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Integrity</h3>
+                    <p>We conduct our business with transparency, honesty, and respect for all stakeholders, building trust through ethical practices.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-users"></i>
+                    <h3>Collaboration</h3>
+                    <p>We work closely with clients, communities, and partners to achieve shared goals and create lasting positive impact.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-award"></i>
+                    <h3>Excellence</h3>
+                    <p>We strive for excellence in every project, delivering superior results that exceed client expectations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Leadership Team</h2>
+                <p class="section-subtitle">Meet the experts behind our success</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-member-img">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="John Deng - CEO">
                     </div>
-                    <div class="about-image fade-in">
-                        <img src="assets/turkis.jpg" alt="Our Mission">
+                    <div class="team-member-info">
+                        <h4>John Deng</h4>
+                        <p>Chief Executive Officer</p>
+                        <p>With over 15 years in construction management, John leads our strategic vision and growth initiatives.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-img">
+                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sarah Akol - Head Architect">
+                    </div>
+                    <div class="team-member-info">
+                        <h4>Sarah Akol</h4>
+                        <p>Head Architect</p>
+                        <p>Sarah brings innovative design solutions that blend aesthetics, functionality, and cultural context.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-img">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Michael Athian - Construction Manager">
+                    </div>
+                    <div class="team-member-info">
+                        <h4>Michael Athian</h4>
+                        <p>Construction Manager</p>
+                        <p>Michael ensures all projects meet our high standards for quality, safety, and timely completion.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-img">
+                        <img src="https://images.unsplash.com/photo-1551836026-d5c2c5af78e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="David Malek - ISSB Specialist">
+                    </div>
+                    <div class="team-member-info">
+                        <h4>David Malek</h4>
+                        <p>ISSB Technology Specialist</p>
+                        <p>David oversees our ISSB production and innovation, ensuring optimal quality and efficiency.</p>
                     </div>
                 </div>
             </div>
@@ -99,76 +263,42 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-container">
                 <div class="footer-about">
-                    <a href="index.html" class="footer-logo">Weltew<span>Homes</span></a>
-                    <p>Bringing the finest Turkish furniture craftsmanship to South Sudan. Transform your living spaces with our exclusive collections of luxury furniture.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                    <div class="footer-logo">AD&B <span>Construction</span></div>
+                    <p>Building strong foundations with innovation — from ISSBs to world-class construction, design, and consultancy in South Sudan.</p>
+                    <div class="footer-social">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="footer-links-container">
-                    <h4 class="footer-heading">Quick Links</h4>
-                    <ul class="footer-links">
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="gallery.html">Project Gallery</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
-                <div class="footer-links-container">
-                    <h4 class="footer-heading">Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Custom Furniture</a></li>
-                        <li><a href="#">Interior Design</a></li>
-                        <li><a href="#">Delivery & Installation</a></li>
-                        <li><a href="#">Consultation</a></li>
-                        <li><a href="#">Maintenance</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links-container">
-                    <h4 class="footer-heading">Contact Info</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Gudele 1 Boba Junction</a></li>
-                        <li><a href="#">Juba, South Sudan</a></li>
-                        <li><a href="#">+211 928 290 011</a></li>
-                        <li><a href="#">info@weltewhomes.com</a></li>
-                    </ul>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Pope Road, Thong Piny, Juba, South Sudan</p>
+                    <p><i class="fas fa-phone"></i> 0922 234 996</p>
+                    <p><i class="fas fa-envelope"></i> info.adbtechnologiesltd@gmail.com</p>
+                    <p><i class="fab fa-whatsapp"></i> +211 922 234 996</p>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Weltew Homes. All Rights Reserved.</p>
+                <p>&copy; 2025 AD&B Construction Co. Ltd. All Rights Reserved. | Building Strong Foundations With Innovation</p>
             </div>
         </div>
     </footer>
 
-    <!-- Font Awesome Icons (as SVG) -->
-    <script>
-        const style = document.createElement('style');
-        style.textContent = `
-            .fas, .fab {
-                font-family: 'Font Awesome 5 Free';
-                font-weight: 900;
-            }
-            .fab {
-                font-family: 'Font Awesome 5 Brands';
-            }
-            .fa-search-plus:before { content: "\\f00e"; }
-            .fa-map-marker-alt:before { content: "\\f3c5"; }
-            .fa-phone:before { content: "\\f095"; }
-            .fa-envelope:before { content: "\\f0e0"; }
-            .fa-facebook-f:before { content: "\\f39e"; }
-            .fa-instagram:before { content: "\\f16d"; }
-            .fa-twitter:before { content: "\\f099"; }
-            .fa-pinterest:before { content: "\\f0d2"; }
-        `;
-        document.head.appendChild(style);
-    </script>
-
+    <!-- Custom JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
