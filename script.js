@@ -104,7 +104,7 @@ function initializeHomeGallery() {
             title: 'Completed Luxury Home'
         },
         {
-            url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            url: 'assets/adbcons.jpeg',
             title: 'Construction work'
         }
     ];
